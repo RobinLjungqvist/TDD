@@ -26,7 +26,7 @@ namespace ValidationEngine
         
         }
 
-        public bool ValidateWithMailClass(string email)
+        public bool ValidateWithMailAdressClass(string email)
         {
             try
             {

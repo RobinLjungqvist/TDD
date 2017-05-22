@@ -33,14 +33,14 @@ namespace ValidationEngine.Tests
             });
         }
         [Test]
-        public void FalseForInvalidEmailClassCheck()
+        public void FalseForInvalidMailAdressClassCheck()
         {
             var sut = new Validator();
 
             Assert.Throws<InvalidEmailException>(() =>
             {
-                var result = sut.ValidateWithMailClass("Det här är ingen email.");
-                var result2 = sut.ValidateWithMailClass("felemail.com");
+                var result = sut.ValidateWithMailAdressClass("Det här är ingen email.");
+                var result2 = sut.ValidateWithMailAdressClass("felemail.com");
 
             });
         }
