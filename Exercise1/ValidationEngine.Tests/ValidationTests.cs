@@ -17,8 +17,12 @@ namespace ValidationEngine.Tests
             var sut = new Validator();
 
             var result = sut.ValidateEmailAdress("nisse@email.com");
+            var result2 = sut.ValidateEmailAdress("snickaren@jobb.se");
+
 
             Assert.IsTrue(result);
+            Assert.IsTrue(result2);
+
         }
         [Test]
         public void FalseForInvalidAddress()
@@ -29,6 +33,8 @@ namespace ValidationEngine.Tests
             {
                 var result = sut.ValidateEmailAdress("Det här är ingen email.");
                 var result2 = sut.ValidateEmailAdress("felemail.com");
+                var result3 = sut.ValidateEmailAdress("fel@email.coms");
+
 
             });
         }
@@ -41,6 +47,7 @@ namespace ValidationEngine.Tests
             {
                 var result = sut.ValidateWithMailAdressClass("Det här är ingen email.");
                 var result2 = sut.ValidateWithMailAdressClass("felemail.com");
+
 
             });
         }
