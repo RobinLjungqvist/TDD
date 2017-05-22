@@ -11,30 +11,40 @@ namespace ValidationEngine.Tests
     [TestFixture]
     public class ValidationTests
     {
+        private static string[] errorEmails()
+        {
+            return new string[] {
+            "",
+            "Test.com",
+            "name@test",
+            "name.text@com",
+            "Name2015@test.com",
+            "name@test2015.com"
+
+            };
+        }
+
         [Test]
         public void TrueForValidAddress()
         {
             var sut = new Validator();
 
-            var result = sut.ValidateEmailAdress("nisse@email.com");
-            var result2 = sut.ValidateEmailAdress("snickaren@jobb.se");
+            var result = sut.ValidateEmailAdress("mike@edument.com");
+            var result2 = sut.ValidateEmailAdress("joe@apple.se");
 
 
             Assert.IsTrue(result);
             Assert.IsTrue(result2);
 
         }
-        [Test]
-        public void FalseForInvalidAddress()
+        [Test, Sequential]
+        public void FalseForInvalidAddress([ValueSource("errorEmails")] string invalidEmail)
         {
             var sut = new Validator();
 
             Assert.Throws<InvalidEmailException>(() =>
             {
-                var result = sut.ValidateEmailAdress("Det här är ingen email.");
-                var result2 = sut.ValidateEmailAdress("felemail.com");
-                var result3 = sut.ValidateEmailAdress("fel@email.coms");
-
+                var result = sut.ValidateEmailAdress(invalidEmail);
 
             });
         }

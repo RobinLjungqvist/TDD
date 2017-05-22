@@ -13,7 +13,7 @@ namespace ValidationEngine
 
         public bool ValidateEmailAdress(string email)
         {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Regex regex = new Regex(@"^([\D\.\-]+)@([\D\-]+)((\.(\D){2,3})+)$");
             var match = regex.Match(email);
             if (match.Success)
             {
