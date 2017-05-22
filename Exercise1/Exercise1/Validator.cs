@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Mail;
 using System.Text.RegularExpressions;
 using ValidationEngine.Exceptions;
 
@@ -23,6 +24,20 @@ namespace ValidationEngine
                 throw new InvalidEmailException();
             }
         
+        }
+
+        public bool ValidateWithMailClass(string email)
+        {
+            try
+            {
+                var mailAdress = new MailAddress(email);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidEmailException("Invalid Email", ex);
+            }
         }
     }
 }
