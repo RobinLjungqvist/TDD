@@ -14,23 +14,24 @@ namespace TravelAgency
 
         public void CreateTour(string name, DateTime date, int nrOfSeats)
         {
-            if(nrOfSeats <= 0)
+            var onlyDate = new DateTime(date.Year, date.Month, date.Day);
+
+            if (nrOfSeats <= 0)
             {
                 throw new TourAllocationException("Number of seats can not be negative!");
             }
 
-            var dateWithoutTime = new DateTime(date.Year, date.Month, date.Day);
-            var tour = new Tour(name, dateWithoutTime , nrOfSeats);
+            var tour = new Tour(name, onlyDate , nrOfSeats);
 
-            if (Tours.Any(t => t.Key == dateWithoutTime))
+            if (Tours.Any(t => t.Key == onlyDate))
             {
                 if (IsValidTourBooking(tour))
-                    Tours[dateWithoutTime].Add(tour);
+                    Tours[onlyDate].Add(tour);
 
             }
             else
             {
-                Tours.Add(dateWithoutTime, new List<Tour>() { tour });
+                Tours.Add(onlyDate, new List<Tour>() { tour });
             }
         }
 
