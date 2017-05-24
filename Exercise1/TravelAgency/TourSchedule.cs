@@ -16,10 +16,12 @@ namespace TravelAgency
         {
             if(nrOfSeats <= 0)
             {
-                throw new TourAllocationException("Seats can not be negative!");
+                throw new TourAllocationException("Number of seats can not be negative!");
             }
+
             var dateWithoutTime = new DateTime(date.Year, date.Month, date.Day);
             var tour = new Tour(name, dateWithoutTime , nrOfSeats);
+
             if (Tours.Any(t => t.Key == dateWithoutTime))
             {
                 if (IsValidTourBooking(tour))
