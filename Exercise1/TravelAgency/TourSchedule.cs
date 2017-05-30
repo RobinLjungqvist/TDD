@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TravelAgency
 {
-    public class TourSchedule
+    public class TourSchedule : ITourSchedule
     {
         public Dictionary<DateTime, List<Tour>> Tours { get; set; }
         public TourSchedule()
