@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency", "TravelAgenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Tests", "TravelAgency.Tests\TravelAgency.Tests.csproj", "{A9DE89A0-7788-4098-8BC5-ADF41250FA1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise3", "Exercise3", "{47A40425-FED0-409C-BCF7-544F3AE990DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculatorApp", "Exercise3\StringCalculatorApp\StringCalculatorApp.csproj", "{477737D7-0E0B-4EA3-9DCC-0B1C46312686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator.Tests", "Exercise3\StringCalculator.Tests\StringCalculator.Tests.csproj", "{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +59,14 @@ Global
 		{A9DE89A0-7788-4098-8BC5-ADF41250FA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DE89A0-7788-4098-8BC5-ADF41250FA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9DE89A0-7788-4098-8BC5-ADF41250FA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{477737D7-0E0B-4EA3-9DCC-0B1C46312686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477737D7-0E0B-4EA3-9DCC-0B1C46312686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477737D7-0E0B-4EA3-9DCC-0B1C46312686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477737D7-0E0B-4EA3-9DCC-0B1C46312686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +79,7 @@ Global
 		{25659FFF-E2F8-439C-AA78-0B7FBE371AEC} = {D3E6401C-5C31-4AE7-AA4B-A70821D46839}
 		{4B0A365D-7EAF-40A3-96C0-8B9DB375BE5F} = {E7B8CB37-C712-48DD-A162-C051FF194190}
 		{A9DE89A0-7788-4098-8BC5-ADF41250FA1A} = {E7B8CB37-C712-48DD-A162-C051FF194190}
+		{477737D7-0E0B-4EA3-9DCC-0B1C46312686} = {47A40425-FED0-409C-BCF7-544F3AE990DF}
+		{9FDF0DCD-8099-43A5-90FE-40F7A36BDB9C} = {47A40425-FED0-409C-BCF7-544F3AE990DF}
 	EndGlobalSection
 EndGlobal

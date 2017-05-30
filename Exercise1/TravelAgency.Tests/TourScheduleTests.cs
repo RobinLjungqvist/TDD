@@ -60,6 +60,9 @@ namespace TravelAgency.Tests
             sut.CreateTour(
                 "A regular safari",
                 new DateTime(2016, 5, 22, 10, 15, 0), 20);
+            sut.CreateTour(
+                "A regular second safari",
+                new DateTime(2016, 5, 22, 10, 15, 0), 20);
 
             var resultForDay1 = sut.GetToursFor(new DateTime(2015, 1, 1));
             var resultForDay2 = sut.GetToursFor(new DateTime(2013, 3, 15));
@@ -72,7 +75,7 @@ namespace TravelAgency.Tests
             Assert.IsTrue(resultForDay2.Count == 1);
             Assert.AreEqual( new DateTime(2013, 3, 15), resultForDay2.First().Date);
 
-            Assert.IsTrue(resultForDay3.Count == 1);
+            Assert.IsTrue(resultForDay3.Count == 2);
             Assert.AreEqual( new DateTime(2016, 5, 22), resultForDay3.First().Date);
 
         }
@@ -82,6 +85,7 @@ namespace TravelAgency.Tests
             sut.CreateTour("First Safari", new DateTime(2015, 1, 1), 20);
             sut.CreateTour("Second Safari", new DateTime(2015, 1, 1), 20);
             sut.CreateTour("Third Safari", new DateTime(2015, 1, 1), 20);
+
             Assert.Throws<TourAllocationException>(() =>
             {           
                 sut.CreateTour("Fourth Safari", new DateTime(2015, 1, 1), 20);
