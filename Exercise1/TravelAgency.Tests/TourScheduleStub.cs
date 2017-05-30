@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.Tests
 {
-    public class TourScheduleStub: ITourSchedule
+    public class TourScheduleStub : ITourSchedule
     {
         public List<Tour> Tours { get; set; }
+        public List<DateTime> ToursCalled { get; set; } = new List<DateTime>();
          
 
         public void CreateTour(string name, DateTime date, int nrOfSeats)
@@ -18,6 +19,7 @@ namespace TravelAgency.Tests
 
         public List<Tour> GetToursFor(DateTime date)
         {
+            ToursCalled.Add(date);
             return Tours.Where(t => t.Date == date).ToList();
         }
     }

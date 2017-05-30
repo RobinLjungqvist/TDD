@@ -45,6 +45,37 @@ namespace TravelAgency
 
         }
     }
+    public class TourDoesntExistException : Exception
+    {
+        public TourDoesntExistException()
+        {
+
+        }
+        public TourDoesntExistException(string message) : base(message)
+        {
+
+        }
+        public TourDoesntExistException(string message, Exception innerException) : base(message, innerException)
+        {
+
+        }
+    }
+
+    public class SeatAllocationException : Exception
+    {
+        public SeatAllocationException()
+        {
+        }
+
+        public SeatAllocationException(string message) : base(message)
+        {
+        }
+
+        public SeatAllocationException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+    }
 
 }
 
